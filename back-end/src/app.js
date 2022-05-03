@@ -7,6 +7,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get('/', AnswerController.getTotal);
 app.post('/answer', AnswerController.answerTreatment);
 
 module.exports = app;

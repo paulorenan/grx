@@ -28,6 +28,12 @@ const answerTreatment = (userAnswer) => {
   return concatAnswers;
 };
 
+const getTotal = () => {
+  const answers = JSON.parse(fs.readFileSync('src/files/answers.txt', 'utf8'));
+  return answers.total;
+};
+
 module.exports = {
   answerTreatment,
+  getTotal,
 }

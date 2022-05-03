@@ -6,6 +6,12 @@ const answerTreatment = (req, res) => {
   res.status(200).json(answer.total);
 };
 
+const getTotal = (_req, res) => {
+  const total = AnswerService.getTotal();
+  res.status(200).json(total);
+};
+
 module.exports = {
   answerTreatment,
+  getTotal,
 };
