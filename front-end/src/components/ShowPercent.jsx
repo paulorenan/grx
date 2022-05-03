@@ -2,15 +2,29 @@ import React from 'react'
 
 function ShowPercent({ answer }) {
   return (
-    <div>
-      <div>
-        {`Quantidade ${answer.name}: ${answer.value}`}
+    <div className="percent">
+      <div className="percentName">
+        <spam>
+          {`Quantidade ${answer.name}`}
+        </spam>
+        <section className="value">
+          <spam>
+            {answer.value}
+          </spam>
+        </section>
       </div>
-      <div>
-        {`% ${answer.name}: ${answer.percent}%`}
+      <div className="percentName">
+        <spam>
+          {`% ${answer.name}`}
+        </spam>
+        <section className="value">
+          <spam>
+            {`${answer.percent}%`}
+          </spam>
+        </section>
       </div>
     </div>
-  )
+  );
 }
 
-export default ShowPercent
+export default ShowPercent;

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import ShowPercent from '../components/ShowPercent';
 import axios from 'axios';
+import '../styles/Total.css';
 
 function Total() {
   const [positive, setPositive] = useState(0);
@@ -12,14 +14,14 @@ function Total() {
     axios.get('http://localhost:3001/').then(res => {
       setPositive(res.data.positive);
       setNegative(res.data.negative);
-      setNonAvaiable(res.data.nonAvaiable);
+      setNonAvaiable(res.data.nonAvailable);
     })
   }, []);
 
   useEffect(() => {
-    const positivePercent = (positive * 100) / total;
-    const negativePercent = (negative * 100) / total;
-    const nonAvaiablePercent = (nonAvaiable * 100) / total;
+    const positivePercent = ((positive * 100) / total).toFixed(2);
+    const negativePercent = ((negative * 100) / total).toFixed(2);
+    const nonAvaiablePercent = ((nonAvaiable * 100) / total).toFixed(2);
     const allArray = [{
       name: 'Positiva',
       value: positive,
@@ -42,7 +44,23 @@ function Total() {
   }, [positive, negative, nonAvaiable]);
 
   return (
-    <div>Total</div>
+    <div className="Home">
+      <div className="totalPage">
+        <section className="totalSection">
+          <h2>
+            Total
+          </h2>
+          <section className="total">
+            {total}
+          </section>
+        </section>
+        <section className="percentSection">
+          {totalArray.map(answer => (
+            <ShowPercent answer={answer} />
+          ))}
+        </section>
+      </div>
+    </div>
   )
 }
 
