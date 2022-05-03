@@ -1,8 +1,6 @@
 
 # Desafio Coleta - GRX
 
-Site de uma pequena rede social
-
 ## Stack utilizada
 
 **Front-end:** React, React-Router, Axios, Docker.
