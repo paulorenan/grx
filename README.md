@@ -5,9 +5,9 @@ Site de uma pequena rede social
 
 ## Stack utilizada
 
-**Front-end:** React, React-Router, Axios.
+**Front-end:** React, React-Router, Axios, Docker.
 
-**Back-end:** NodeJs, Express, fs, Body-parser, Cors.
+**Back-end:** NodeJs, Express, fs, Body-parser, Cors, Docker.
 
 
 ## Etapa Desafiadora
