@@ -21,9 +21,9 @@ function Total() {
   }, []);
 
   useEffect(() => {
-    const positivePercent = ((positive * 100) / total).toFixed(2);
-    const negativePercent = ((negative * 100) / total).toFixed(2);
-    const nonAvailablePercent = ((nonAvailable * 100) / total).toFixed(2);
+    const positivePercent = total === 0 ? 0 : ((positive * 100) / total).toFixed(2);
+    const negativePercent = total === 0 ? 0 : ((negative * 100) / total).toFixed(2);
+    const nonAvailablePercent = total === 0 ? 0 : ((nonAvailable * 100) / total).toFixed(2);
     const allArray = [{
       name: 'Positiva',
       value: positive,
@@ -37,7 +37,6 @@ function Total() {
       value: nonAvailable,
       percent: nonAvailablePercent
     }];
-    // sort array by percent
     setTotalArray(allArray.sort((a, b) => b.percent - a.percent));
 }, [positive, negative, nonAvailable, total]);
 
