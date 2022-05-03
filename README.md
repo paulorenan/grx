@@ -41,6 +41,8 @@ Inicie o docker
 ```bash
   npm start
 ```
+o back-end roda na porta 3001 e o front-end na porta 3000
+
 ## Screenshots
 
 ![Tela Principal](https://uploaddeimagens.com.br/images/003/852/847/original/Captura_de_tela_de_2022-05-03_12-51-00.png?1651593154)
