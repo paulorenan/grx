@@ -34,7 +34,7 @@ function Home() {
 
   return (
     <div className="Home">
-      <div>
+      <div className="homePage">
         <section>
           <h2>
             {'1) Você se considera bom em lógica?'}
@@ -83,6 +83,9 @@ function Home() {
           Enviar
         </button>
       </div>
+      <button className="button" onClick={() => navigate('/total')}>
+        Ver Total
+      </button>
     </div>
   );
 }

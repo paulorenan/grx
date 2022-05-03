@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ShowPercent from '../components/ShowPercent';
 import axios from 'axios';
 import '../styles/Total.css';
@@ -6,22 +7,23 @@ import '../styles/Total.css';
 function Total() {
   const [positive, setPositive] = useState(0);
   const [negative, setNegative] = useState(0);
-  const [nonAvaiable, setNonAvaiable] = useState(0);
+  const [nonAvailable, setNonAvailable] = useState(0);
   const [total, setTotal] = useState(0);
   const [totalArray, setTotalArray] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get('http://localhost:3001/').then(res => {
       setPositive(res.data.positive);
       setNegative(res.data.negative);
-      setNonAvaiable(res.data.nonAvailable);
+      setNonAvailable(res.data.nonAvailable);
     })
   }, []);
 
   useEffect(() => {
     const positivePercent = ((positive * 100) / total).toFixed(2);
     const negativePercent = ((negative * 100) / total).toFixed(2);
-    const nonAvaiablePercent = ((nonAvaiable * 100) / total).toFixed(2);
+    const nonAvailablePercent = ((nonAvailable * 100) / total).toFixed(2);
     const allArray = [{
       name: 'Positiva',
       value: positive,
@@ -32,16 +34,16 @@ function Total() {
       percent: negativePercent
     }, {
       name: 'Não Avaliada',
-      value: nonAvaiable,
-      percent: nonAvaiablePercent
+      value: nonAvailable,
+      percent: nonAvailablePercent
     }];
     // sort array by percent
     setTotalArray(allArray.sort((a, b) => b.percent - a.percent));
-}, [positive, negative, nonAvaiable, total]);
+}, [positive, negative, nonAvailable, total]);
 
   useEffect(() => {
-    setTotal(positive + negative + nonAvaiable);
-  }, [positive, negative, nonAvaiable]);
+    setTotal(positive + negative + nonAvailable);
+  }, [positive, negative, nonAvailable]);
 
   return (
     <div className="Home">
@@ -60,6 +62,9 @@ function Total() {
           ))}
         </section>
       </div>
+      <button className="button" onClick={() => navigate('/')}>
+        Pagina Inicial
+      </button>
     </div>
   )
 }
