@@ -1,1 +1,1 @@
-{"total": {"positive": 0, "negative": 0, "nonAvailable": 0}, "answers": [] }
+{"total":{"positive":4,"negative":4,"nonAvailable":1},"answers":[{"question1":"Sim","question2":"Sim","question3":"Agora!!","question4":"Sim","qtyPositive":3,"qtyNegative":0,"qtyNonAvailable":0},{"question1":"Não","question2":"Sim","question3":"Não sei","question4":"Sim","qtyPositive":1,"qtyNegative":1,"qtyNonAvailable":1},{"question1":"Não","question2":"Não","question3":"Não","question4":"Sim","qtyPositive":0,"qtyNegative":3,"qtyNonAvailable":0}]}

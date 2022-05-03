@@ -1,9 +1,9 @@
 const AnswerService = require('../service/AnswerService');
 
 const answerTreatment = (req, res) => {
-  // const { answer } = req.body;
-  const answer = AnswerService.answerTreatment();
-  res.status(200).json(answer);
+  const userAnswer = req.body;
+  const answer = AnswerService.answerTreatment(userAnswer);
+  res.status(200).json(answer.total);
 };
 
 module.exports = {

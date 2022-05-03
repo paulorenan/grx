@@ -1,0 +1,1 @@
+{"total":{"positive":0,"negative":0,"nonAvailable":0},"answers":[]}
